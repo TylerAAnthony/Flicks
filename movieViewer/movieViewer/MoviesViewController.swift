@@ -8,6 +8,9 @@
 
 import UIKit
 import AFNetworking
+import MBProgressHUD
+
+
 
 
 class MoviesViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
@@ -48,6 +51,8 @@ View Did Load Function
             delegate: nil,
             delegateQueue: NSOperationQueue.mainQueue()
         )
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         
         let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
@@ -57,9 +62,11 @@ View Did Load Function
                             print("response: \(responseDictionary)")
                             self.movies = responseDictionary["results"] as? [NSDictionary]
                             self.tableView.reloadData()
-                            
+                            MBProgressHUD.hideHUDForView(self.view, animated: false)
+
                             
                     }
+                
                 }
         })
         task.resume()
