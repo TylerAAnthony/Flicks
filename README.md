@@ -1,8 +1,8 @@
-# Project 1 - *Name of App Here*
+# Project 1 - *Tyler Anthony-Flicks*
 
-**Name of your app** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+**Movie Viewer** is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
@@ -27,8 +27,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. More info on the meanings of words like delegates, and NS
+2. Breaking down code more line by line
 
 ## Video Walkthrough 
 
@@ -40,7 +40,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+While writing this app I strugled with just looking at the video and doing copying it. However I realized that that was not helping me so I started over and worked through it on my own. I am glad I did this because I learned alot from this assignment by doing so.
 
 ## License
 
