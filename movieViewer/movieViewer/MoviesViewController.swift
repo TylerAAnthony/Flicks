@@ -32,9 +32,16 @@ View Did Load Function
 */
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+        tableView.insertSubview(refreshControl, atIndex: 0)
+
         
         tableView.dataSource = self
         tableView.delegate = self
+        
         
         
 
@@ -52,6 +59,7 @@ View Did Load Function
             delegateQueue: NSOperationQueue.mainQueue()
         )
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
 
         
         let task: NSURLSessionDataTask = session.dataTaskWithRequest(request,
@@ -63,16 +71,31 @@ View Did Load Function
                             self.movies = responseDictionary["results"] as? [NSDictionary]
                             self.tableView.reloadData()
                             MBProgressHUD.hideHUDForView(self.view, animated: false)
-
-                            
+	
                     }
+                    
+                    
+                    // Tell the refreshControl to stop spinning
+                    
+                    // Initialize a UIRefreshControl
+                    
                 
                 }
         })
+        
+       
         task.resume()
 
         
     }
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+
+    
+    
 /*
 Did Receive Memory Warning Function
 */
