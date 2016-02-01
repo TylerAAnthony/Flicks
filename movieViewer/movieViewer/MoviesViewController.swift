@@ -127,15 +127,18 @@ Functions
         let releaseDate = movie["release_date"] as! String
         let overview = movie["overview"] as! String
         let rating = movie["vote_average"] as! Float
-        let posterPath = movie["poster_path"] as! String
+        
         let base_url = "http://image.tmdb.org/t/p/w500"
+        if let posterPath = movie["poster_path"] as? String{
         let posterurl = NSURL(string: base_url + posterPath)
-        
-        
-        
-        
-        
+            
         cell.posterView.setImageWithURL(posterurl!)
+        
+        }
+        
+        
+        
+        
         cell.ratingLabel.text = "\(rating)/10"
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
@@ -147,6 +150,30 @@ Functions
 
 
     
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let movie = movies![indexPath!.row]
+        let detailViewController = segue.destinationViewController as! DetailViewController
+        
+        
+        detailViewController.movie = movie
+        
+        
+        
+        
+        
+        
+        print("prepare for segway")
+        
+        
+// Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    
+    }
 
    
 }
