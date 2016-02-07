@@ -133,6 +133,10 @@ Functions
         let posterurl = NSURL(string: base_url + posterPath)
             
         cell.posterView.setImageWithURL(posterurl!)
+        // changes color of cell when selected by user
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.orangeColor()
+        cell.selectedBackgroundView = backgroundView
         
         }
         
