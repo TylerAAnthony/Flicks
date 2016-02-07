@@ -2,7 +2,7 @@
 
 **Ficks** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
@@ -35,8 +35,8 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
+Creating this app showed me that the work over the last few weeks is paying off and It is becoming easier to work with both xcode, and swift.
 
-Describe any challenges encountered while building the app.
 
 ## License
 
